@@ -3,7 +3,7 @@
 import React from 'react';
 import {render} from 'react-testing-library';
 import 'jest-dom/extend-expect';
-// import 'react-testing-library/cleanup-after-each';
+import 'react-testing-library/cleanup-after-each';
 import ReactDOM from 'react-dom';
 
 import Dashboard from './Dashboard';
@@ -16,10 +16,6 @@ describe('<Dashboard />' , () => {
         ReactDOM.unmountComponentAtNode(div);
       });
 
-    it.skip('defaults to unlocked and open', () => {
-        const {getByText} = render(<App />);
-
-
-    });
+    
 
 });

@@ -52,4 +52,6 @@ describe('<Display />' , () => {
         
         expect(lockDisplay).toHaveClass('green-led');
     });
+
+    
 });

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import {render, fireEvent} from 'react-testing-library';
+import 'jest-dom/extend-expect';
 import 'react-testing-library/cleanup-after-each';
 
 import Controls from './Controls';
@@ -28,6 +29,22 @@ describe('<Controls />', () => {
         //fireEvent.click(getByTestId('lockToggleButton'));
         fireEvent.click(lockButton);
         expect(toggleLocked).toHaveBeenCalled();
+    });
+
+    it('should have a closed button', () => {
+        const {getByTestId} = render(<Controls />);
+
+        const closedButton = getByTestId('closeToggleButton');
+
+        expect(closedButton).toBeInTheDocument();
+    });
+    
+    it('should have a locked button', () => {
+        const {getByTestId} = render(<Controls />);
+
+        const lockedButton = getByTestId('lockToggleButton');
+
+        expect(lockedButton).toBeInTheDocument();
     });
 
     
