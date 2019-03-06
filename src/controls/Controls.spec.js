@@ -47,7 +47,21 @@ describe('<Controls />', () => {
         expect(lockedButton).toBeInTheDocument();
     });
 
-    
+    it('should change (text) from open to closed when closed', () => {
+        const {getByTestId} = render(<Controls closed={true}/>);
+
+        const closedButton = getByTestId('closeToggleButton');
+
+        expect(closedButton).toBeTruthy();
+    })
+
+    it('should change (text) from unlocked to locked when locked', () => {
+        const {getByTestId} = render(<Controls locked={true}/>);
+
+        const lockedButton = getByTestId('lockToggleButton');
+
+        expect(lockedButton).toBeTruthy();
+    })
 
 })
 
